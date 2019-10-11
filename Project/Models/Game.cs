@@ -14,11 +14,11 @@ namespace ConsoleAdventure.Project.Models
     public void Setup()
     {
       //SECTION Add rooms
-      Room room1 = new Room("room1", "It's Roomy", true);
+      Room room1 = new Room("room1", "In a flash you see red before being consumed by ffiery death", true);
       Room room2 = new Room("room2", "It's Roomy", true);
       Room room3 = new Room("room3", "It's Roomy", false);
       Room room4 = new Room("room4", "It's Roomy", false);
-      Room room5 = new Room("room5", "Starting Room", true);
+      Room room5 = new Room("room5", "Starting Room", false);
       Room room6 = new Room("room6", "It's Roomy", true);
       Room room7 = new Room("room7", "It's Roomy", false);
       Room room8 = new Room("room8", "It's Roomy", false);

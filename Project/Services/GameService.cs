@@ -23,11 +23,22 @@ namespace ConsoleAdventure.Project
         _game.CurrentRoom = _game.CurrentRoom.Exits[direction];
         if (!_game.CurrentRoom.IsTrapped)
         {
-          Messages.Add(_game.CurrentRoom.Description);
+          // Messages.Add(_game.CurrentRoom.Description);
+          Messages.Add(((Room)_game.CurrentRoom).GetTemplate());
+          if (_game.CurrentRoom.Items.Count > 0)
+          {
+            Messages.Add("The room contains:");
+            foreach (Item item in _game.CurrentRoom.Items)
+            {
+              Messages.Add($"{item.Name}");
+            }
+          }
+
         }
         else
         {
-          Console.WriteLine("This room is trapped you lose\nPress the any key to exit");
+          Console.WriteLine(_game.CurrentRoom.Description);
+          Console.WriteLine("YOU LOSE\nPress the any key to exit");
           Console.ReadKey();
           Environment.Exit(0);
         }
@@ -69,7 +80,8 @@ Reset - Resets the game
 
     public void Look()
     {
-      Messages.Add($"{_game.CurrentRoom.Description} - {_game.CurrentRoom.Name}");
+      // Messages.Add($"{_game.CurrentRoom.Description} - {_game.CurrentRoom.Name}");
+      Messages.Add(((Room)_game.CurrentRoom).GetTemplate());
       if (_game.CurrentRoom.Items.Count > 0)
       {
         Messages.Add("The room contains:");
@@ -178,3 +190,8 @@ Reset - Resets the game
     }
   }
 }
+
+
+
+
+

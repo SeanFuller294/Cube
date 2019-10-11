@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ConsoleAdventure.Project.Interfaces;
 
@@ -31,10 +32,10 @@ namespace ConsoleAdventure.Project.Models
 
     public string GetTemplate()
     {
-      string template = $"Room #{Name}: {Description} \n There are exits to the";
+      string template = $"{Description} \nThere are exits to the";
       foreach (var exit in Exits)
       {
-        template += $"\n{exit.Key}";
+        template += $"\n\t{exit.Key}";
       }
       return template;
     }

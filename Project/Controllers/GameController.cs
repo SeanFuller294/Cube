@@ -16,6 +16,8 @@ namespace ConsoleAdventure.Project.Controllers
       Console.WriteLine("What is your name?");
       string name = Console.ReadLine();
       _gameService.Setup(name);
+      Console.WriteLine("Type Help for a list of commands \npress the any key to continue");
+      Console.ReadKey();
       while (true)
       {
         Print();
