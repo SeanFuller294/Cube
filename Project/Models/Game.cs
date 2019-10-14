@@ -15,8 +15,6 @@ namespace ConsoleAdventure.Project.Models
     public void Setup()
     {
       Random random = new Random();
-
-
       string trapString()
       {
         int rand = random.Next(1, 4);
@@ -50,8 +48,8 @@ namespace ConsoleAdventure.Project.Models
       Room room8 = new Room("room8", "A bright red and yellow warning light flashes over and over.", false);
       Room room9 = new Room("room9", "You hear the distant sound of someone crying. You look around, but the room is empty.", false);
       Room room10 = new Room("room10", "A soft white light illuminates the room. You feel safe here.", false);
-      Room room11 = new Room("room11", "Carved on the south wall is the words: 'No Hope'", false);
-      Room room12 = new Room("room12", "It's Roomy", false);
+      Room room11 = new Room("room11", "Carved on the south wall are the words: 'No Hope'", false);
+      Room room12 = new Room("room12", "A room like the rest. This one has padded walls.", false);
       Room room13 = new Room("room13", "It's Roomy", false);
       Room room14 = new Room("room14", trapString(), true);
       Room room15 = new Room("room15", "It's Roomy", false);

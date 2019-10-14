@@ -55,6 +55,9 @@ namespace ConsoleAdventure.Project.Controllers
         case "inventory":
           _gameService.Inventory();
           break;
+        case "reset":
+          _gameService.Reset();
+          break;
         default:
           Console.WriteLine("Don't do drugs");
           break;

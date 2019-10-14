@@ -101,7 +101,9 @@ Reset - Resets the game
     ///</summary>
     public void Reset()
     {
-      throw new System.NotImplementedException();
+      Console.WriteLine("What is your name?");
+      string playerName = Console.ReadLine();
+      Setup(playerName);
     }
 
     public void Setup(string playerName)
