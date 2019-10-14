@@ -16,52 +16,57 @@ namespace ConsoleAdventure.Project.Models
     {
       Random random = new Random();
 
-      int rand = random.Next(1, 4);
-      string trapString = "";
-      if (rand == 1)
+
+      string trapString()
       {
-        trapString = "In a flash you see red before being consumed by fiery death";
-      }
-      else if (rand == 2)
-      {
-        trapString = "Water floods the room. You try to go back, but the door is locked. You drown.";
-      }
-      else if (rand == 3)
-      {
-        trapString = "Blades shoot out from every direction slicing you into pieces!";
-      }
-      else
-      {
-        trapString = "";
+        int rand = random.Next(1, 4);
+        string tString = "";
+        if (rand == 1)
+        {
+          tString = "In a flash you see red before being consumed by fiery death";
+        }
+        else if (rand == 2)
+        {
+          tString = "Water floods the room. You try to go back, but the door is locked. You drown.";
+        }
+        else if (rand == 3)
+        {
+          tString = "Blades shoot out from every direction slicing you into pieces!";
+        }
+        else
+        {
+          tString = "Spikes shoot up from the floor impaling you!";
+        }
+        return tString;
       }
       //SECTION Add rooms
-      Room room1 = new Room("room1", trapString, true);
-      Room room2 = new Room("room2", trapString, true);
+      Room room1 = new Room("room1", trapString(), true);
+      Room room2 = new Room("room2", trapString(), true);
       Room room3 = new Room("room3", "You scan the room, not seeing anything noteworthy. What you do notice is that it smells faintly of onions.", false);
       Room room4 = new Room("room4", "A dim green light illuminates the room.", false);
       Room room5 = new Room("room5", "A strange room with doors on all sides and a ladder in the middle.", false);
-      Room room6 = new Room("room6", trapString, true);
+      Room room6 = new Room("room6", trapString(), true);
       Room room7 = new Room("room7", "A dim blue light illuminates the room.", false);
       Room room8 = new Room("room8", "A bright red and yellow warning light flashes over and over.", false);
       Room room9 = new Room("room9", "You hear the distant sound of someone crying. You look around, but the room is empty.", false);
       Room room10 = new Room("room10", "A soft white light illuminates the room. You feel safe here.", false);
-      Room room11 = new Room("room11", "It's Roomy", false);
+      Room room11 = new Room("room11", "Carved on the south wall is the words: 'No Hope'", false);
       Room room12 = new Room("room12", "It's Roomy", false);
       Room room13 = new Room("room13", "It's Roomy", false);
-      Room room14 = new Room("room14", "It's Roomy", true);
+      Room room14 = new Room("room14", trapString(), true);
       Room room15 = new Room("room15", "It's Roomy", false);
       Room room16 = new Room("room16", "It's Roomy", false);
-      Room room17 = new Room("room17", "It's Roomy", true);
+      Room room17 = new Room("room17", trapString(), true);
       Room room18 = new Room("room18", "It's Roomy", false);
       Room room19 = new Room("room19", "It's Roomy", false);
-      Room room20 = new Room("room20", "It's Roomy", true);
+      Room room20 = new Room("room20", trapString(), true);
       Room room21 = new Room("room21", "It's Roomy", false);
       Room room22 = new Room("room22", "It's Roomy", false);
       Room room23 = new Room("room23", "It's Roomy", false);
       Room room24 = new Room("room24", "It's Roomy", false);
       Room room25 = new Room("room25", "It's Roomy", false);
-      Room room26 = new Room("room26", "It's Roomy", true);
-      Room room27 = new Room("room27", "It's Roomy", true);
+      Room room26 = new Room("room26", trapString(), true);
+      Room room27 = new Room("room27", trapString(), true);
       Room room28 = new Room("room28", "You have found the exit to the cube, you go through and escape this prison.", false);
 
       CurrentRoom = room5;
