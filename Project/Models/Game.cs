@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ConsoleAdventure.Project.Interfaces;
 
@@ -13,17 +14,37 @@ namespace ConsoleAdventure.Project.Models
     //NOTE Make your rooms here...
     public void Setup()
     {
+      Random random = new Random();
+
+      int rand = random.Next(1, 4);
+      string trapString = "";
+      if (rand == 1)
+      {
+        trapString = "In a flash you see red before being consumed by fiery death";
+      }
+      else if (rand == 2)
+      {
+        trapString = "Water floods the room. You try to go back, but the door is locked. You drown.";
+      }
+      else if (rand == 3)
+      {
+        trapString = "Blades shoot out from every direction slicing you into pieces!";
+      }
+      else
+      {
+        trapString = "";
+      }
       //SECTION Add rooms
-      Room room1 = new Room("room1", "In a flash you see red before being consumed by ffiery death", true);
-      Room room2 = new Room("room2", "It's Roomy", true);
-      Room room3 = new Room("room3", "It's Roomy", false);
-      Room room4 = new Room("room4", "It's Roomy", false);
-      Room room5 = new Room("room5", "Starting Room", false);
-      Room room6 = new Room("room6", "It's Roomy", true);
-      Room room7 = new Room("room7", "It's Roomy", false);
-      Room room8 = new Room("room8", "It's Roomy", false);
-      Room room9 = new Room("room9", "It's Roomy", false);
-      Room room10 = new Room("room10", "It's Roomy", false);
+      Room room1 = new Room("room1", trapString, true);
+      Room room2 = new Room("room2", trapString, true);
+      Room room3 = new Room("room3", "You scan the room, not seeing anything noteworthy. What you do notice is that it smells faintly of onions.", false);
+      Room room4 = new Room("room4", "A dim green light illuminates the room.", false);
+      Room room5 = new Room("room5", "A strange room with doors on all sides and a ladder in the middle.", false);
+      Room room6 = new Room("room6", trapString, true);
+      Room room7 = new Room("room7", "A dim blue light illuminates the room.", false);
+      Room room8 = new Room("room8", "A bright red and yellow warning light flashes over and over.", false);
+      Room room9 = new Room("room9", "You hear the distant sound of someone crying. You look around, but the room is empty.", false);
+      Room room10 = new Room("room10", "A soft white light illuminates the room. You feel safe here.", false);
       Room room11 = new Room("room11", "It's Roomy", false);
       Room room12 = new Room("room12", "It's Roomy", false);
       Room room13 = new Room("room13", "It's Roomy", false);
@@ -41,7 +62,7 @@ namespace ConsoleAdventure.Project.Models
       Room room25 = new Room("room25", "It's Roomy", false);
       Room room26 = new Room("room26", "It's Roomy", true);
       Room room27 = new Room("room27", "It's Roomy", true);
-      Room room28 = new Room("room28", "Winning Room", false);
+      Room room28 = new Room("room28", "You have found the exit to the cube, you go through and escape this prison.", false);
 
       CurrentRoom = room5;
 
