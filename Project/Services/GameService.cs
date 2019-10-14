@@ -44,6 +44,7 @@ namespace ConsoleAdventure.Project
         }
         if (_game.CurrentRoom.Name == "room28")
         {
+          Console.WriteLine(_game.CurrentRoom.Description);
           Console.WriteLine("You Win Press the any key to exit");
           Console.ReadKey();
           Environment.Exit(0);
