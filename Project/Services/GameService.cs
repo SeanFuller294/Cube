@@ -38,16 +38,32 @@ namespace ConsoleAdventure.Project
         else
         {
           Console.WriteLine(_game.CurrentRoom.Description);
-          Console.WriteLine("YOU LOSE\nPress the any key to exit");
-          Console.ReadKey();
-          Environment.Exit(0);
+          Console.WriteLine("YOU LOSE\nWould you like to play again? (y/n)");
+          string decision = Console.ReadLine().ToLower();
+          if (decision == "y" || decision == "yes")
+          {
+            Reset();
+          }
+          else
+          {
+            Environment.Exit(0);
+          }
         }
         if (_game.CurrentRoom.Name == "room28")
         {
           Console.WriteLine(_game.CurrentRoom.Description);
-          Console.WriteLine("You Win Press the any key to exit");
-          Console.ReadKey();
-          Environment.Exit(0);
+          Console.WriteLine("YOU WIN\nWould you like to play again? (y/n)");
+          string decision = Console.ReadLine().ToLower();
+          if (decision == "y" || decision == "yes")
+          {
+            Messages.Clear();
+            Console.Clear();
+            Reset();
+          }
+          else
+          {
+            Environment.Exit(0);
+          }
         }
       }
       else
