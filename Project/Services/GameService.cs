@@ -132,6 +132,7 @@ Reset - Resets the game
       player.Inventory.Add(RightShoe);
       player.Inventory.Add(LeftShoe);
       _game.Setup();
+      Messages.Add(_game.CurrentRoom.GetTemplate());
     }
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
     public void TakeItem(string itemName)

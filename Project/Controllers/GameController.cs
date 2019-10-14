@@ -20,6 +20,7 @@ namespace ConsoleAdventure.Project.Controllers
       Console.ReadKey();
       while (true)
       {
+
         Print();
         GetUserInput();
       }
