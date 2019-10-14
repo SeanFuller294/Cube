@@ -182,7 +182,7 @@ Reset - Resets the game
       {
         _game.Player.Inventory.Remove(i);
         Console.WriteLine("Which Direction?");
-        string response = Console.ReadLine();
+        string response = Console.ReadLine().ToLower();
         if (_game.CurrentRoom.Exits.ContainsKey(response))
         {
 
