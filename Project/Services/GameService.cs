@@ -118,9 +118,9 @@ Reset - Resets the game
     ///</summary>
     public void Reset()
     {
-      Console.WriteLine("What is your name?");
-      string playerName = Console.ReadLine();
-      Setup(playerName);
+      // Console.WriteLine("What is your name?");
+      // string playerName = Console.ReadLine();
+      Setup(_game.Player.Name);
     }
 
     public void Setup(string playerName)
@@ -146,15 +146,15 @@ Reset - Resets the game
           {
             i = item;
           }
-          else
-          {
-            Messages.Add("That item is not in this room");
-          }
         }
         if (i.Name.Length > 1)
         {
           _game.Player.Inventory.Add(i);
           _game.CurrentRoom.Items.Remove(i);
+        }
+        else
+        {
+          Messages.Add("That item is not in this room");
         }
       }
 
@@ -208,8 +208,52 @@ Reset - Resets the game
         Messages.Add("You don't have that item...");
       }
     }
+
+
+    public void UseItem(string itemName, string direction)
+    {
+      Item i = new Item("", "");
+      foreach (Item item in _game.Player.Inventory)
+      {
+        if (item.Name == itemName)
+        {
+          i = item;
+        }
+      }
+      if (i.Name.Length > 0)
+      {
+        _game.Player.Inventory.Remove(i);
+        if (_game.CurrentRoom.Exits.ContainsKey(direction))
+        {
+
+          if (!_game.CurrentRoom.Exits[direction].IsTrapped)
+          {
+            _game.CurrentRoom.Exits[direction].Items.Add(i);
+            Messages.Add("The room appears to be safe");
+          }
+          else
+          {
+            Messages.Add("The Room Was Trapped and you have lost your shoe");
+          }
+        }
+        else
+        {
+          _game.CurrentRoom.Items.Add(i);
+          Messages.Add("You throw your shoe at the wall.");
+        }
+
+      }
+      else
+      {
+        Messages.Add("You don't have that item...");
+      }
+    }
+
+
   }
+
 }
+
 
 
 

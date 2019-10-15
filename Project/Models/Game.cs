@@ -58,7 +58,7 @@ namespace ConsoleAdventure.Project.Models
       Room room18 = new Room("room18", "The room is black. The only light streams from one dim light on each door.", false);
       Room room19 = new Room("room19", "A skeleton sits in the corner. You try to pick up it's bones, but every one you touch crumbles in your fingers.", false);
       Room room20 = new Room("room20", trapString(), true);
-      Room room21 = new Room("room21", "It's Scary.", false);
+      Room room21 = new Room("room21", "It's scary.", false);
       Room room22 = new Room("room22", "A dim yellow light illuminates the room.", false);
       Room room23 = new Room("room23", "You hear elevator music playing. You look around, but see no speakers.", false);
       Room room24 = new Room("room24", "There is an image of a cake on the south door.", false);

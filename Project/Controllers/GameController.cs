@@ -31,15 +31,35 @@ namespace ConsoleAdventure.Project.Controllers
     {
       Console.WriteLine("What would you like to do?");
       string input = Console.ReadLine().ToLower() + " ";
-      string command = input.Substring(0, input.IndexOf(" "));
+      // string command = input.Substring(0, input.IndexOf(" "));
       string option = input.Substring(input.IndexOf(" ") + 1).Trim();
+      string[] inputArr = input.Split(" ");
+      // string option = inputArr[1].Trim();
+      string direction = "";
+      string command = inputArr[0];
+      if (inputArr.Length > 3)
+      {
+        option = inputArr[1];
+        option += " " + inputArr[2];
+      }
+      if (inputArr.Length > 4)
+      {
+        direction = inputArr[3];
+      }
       switch (command)
       {
         case "go":
           _gameService.Go(option);
           break;
         case "use":
-          _gameService.UseItem(option);
+          if (inputArr.Length > 4)
+          {
+            _gameService.UseItem(option, direction);
+          }
+          else
+          {
+            _gameService.UseItem(option);
+          }
           break;
         case "take":
           _gameService.TakeItem(option);
@@ -60,7 +80,8 @@ namespace ConsoleAdventure.Project.Controllers
           _gameService.Reset();
           break;
         default:
-          Console.WriteLine("Don't do drugs");
+          _gameService.Messages.Add("Don't do drugs\n");
+          _gameService.Look();
           break;
       }
       //NOTE this will take the user input and parse it into a command and option.
